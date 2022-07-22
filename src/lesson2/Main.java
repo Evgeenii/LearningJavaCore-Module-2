@@ -52,8 +52,13 @@ public class Main {
                 .flatMap(Collection::stream)
                 .forEach(System.out::println);
 
+        //Задача №3
+        // 1. Узнать, есть ли в lists хотя бы один список, который содержит сумму всех элементов вложенного листа
+        // равную 12
 
-
+        boolean b = lists.stream()
+                .anyMatch(x -> x.stream().reduce(Integer::sum).orElse(0) == 12);
+        System.out.println("Результат: " + b);
 
 
     }
